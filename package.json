@@ -1,0 +1,31 @@
+{
+  "name": "full-backend",
+  "version": "1.0.0",
+  "description": "leaning fullstack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/BackEnd/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuocTai2002/Fullstack_Backend-nodejs.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "tainguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuocTai2002/Fullstack_Backend-nodejs/issues"
+  },
+  "homepage": "https://github.com/QuocTai2002/Fullstack_Backend-nodejs#readme",
+  "dependencies": {
+    "dotenv": "16.3.1",
+    "ejs": "3.1.8",
+    "express": "4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "3.0.1"
+  }
+}
