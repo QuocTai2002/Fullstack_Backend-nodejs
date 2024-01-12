@@ -1,7 +1,6 @@
 const connection = require('../config/database')
 const Swal = require('sweetalert2')
 const {getAllUser, postCreateUserAPI, getUserID, postUpdateById, DeleteById} = require('../service/CRUDService')
-
 const getHomepage = async (req, res) =>{
     // res.send("Hello World !");
   let results = await getAllUser();
