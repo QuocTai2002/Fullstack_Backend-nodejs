@@ -4,7 +4,7 @@ const branch  =  require('../models/schema/branch')
 const {getAllUser, postCreateUserAPI, getUserID, postUpdateById, DeleteById} = require('../service/CRUDService')
 const getHomepage = async (req, res) =>{
 
-  // let results = await getAllUser();
+  
   try {
     const data = await branch.find({});
     res.status(200).json(data);

@@ -12,4 +12,4 @@ const branch = new Scheme ({
 
 
 
-module.exports = connection.model('demo_datas', branch)
+module.exports = connection.model('branch_clinic', branch)
