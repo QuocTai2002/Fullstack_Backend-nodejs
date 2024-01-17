@@ -1,8 +1,17 @@
 const connection = require( "../config/database")
+const branch = require('../models/schema/branch')
 
-const getAllUser = async () =>{
-    const [results, fields] = await connection.execute( 'SELECT * FROM  Users')
-    return results;
+
+const CRUDBranch = {
+  getBranch: () =>{ // [GET]: lấy dữ liệu chi nhánh phòng khám 
+    return branch.find({})
+  },
+
+}
+
+async function getAllUser() {
+  const [results, fields] = await connection.execute('SELECT * FROM  Users')
+  return results
 }
 
 const postCreateUserAPI = async (email, name, city) => {
@@ -29,10 +38,12 @@ const DeleteById = async (UserId) =>{
   const [results, fields] = await connection.query(`DELETE FROM Users  WHERE id = ?;`,
   [UserId])
 }
+
 module.exports = {
 getAllUser,
 postCreateUserAPI,
 getUserID,
 postUpdateById,
-DeleteById
+DeleteById,
+CRUDBranch
 }

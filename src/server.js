@@ -15,10 +15,9 @@ app.use(express.urlencoded({extended: true}));
 configViewEngine(app)
  // khai bao route
  app.use('/',webRouter);
-
  // route API
  initAPIRoute(app)
- // test connection
+
 
 // simple query
  app.listen(port, hostname, () => {

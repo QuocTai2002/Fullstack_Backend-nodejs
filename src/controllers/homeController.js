@@ -1,10 +1,22 @@
-const connection = require('../config/database')
+
 const Swal = require('sweetalert2')
+const branch  =  require('../models/schema/branch')
 const {getAllUser, postCreateUserAPI, getUserID, postUpdateById, DeleteById} = require('../service/CRUDService')
 const getHomepage = async (req, res) =>{
-    // res.send("Hello World !");
-  let results = await getAllUser();
-   res.render('home.ejs', {listUser: results})
+
+  
+  try {
+    const data = await branch.find({});
+    res.status(200).json(data);
+}  catch (err) {
+    res.status(400).json({error: err});
+
+}
+
+ 
+  res.render("sample.ejs");
+
+  //  res.render('home.ejs', {listUser: results})
    // query database 
 }
 const getWebpage =  (req, res) =>{
