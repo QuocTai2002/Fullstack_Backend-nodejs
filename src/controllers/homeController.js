@@ -43,6 +43,7 @@ const postDeleteUser = async (req, res) =>{
   await DeleteById(userId);
   res.redirect('/');
 }
+
 module.exports = {
     getHomepage,                                                                                                                        
     getWebpage,
@@ -50,5 +51,6 @@ module.exports = {
     getPageCreateUser,
     postUpdateUser,
     getUpdateUser,
-    postDeleteUser
+    postDeleteUser,
+    demoFucExpress
 }
