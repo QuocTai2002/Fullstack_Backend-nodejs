@@ -11,12 +11,12 @@ const hostname = process.env.HOST_NAME
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+ // route API
+ initAPIRoute(app)
 // config template engine
 configViewEngine(app)
  // khai bao route
  app.use('/',webRouter);
- // route API
- initAPIRoute(app)
 
 
 // simple query

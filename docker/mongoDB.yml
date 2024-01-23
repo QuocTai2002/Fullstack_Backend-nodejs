@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_2024
+    restart: unless-stopped
+    ports:
+      - 33467:27017
+    volumes:
+      - ./database-data:/data/db

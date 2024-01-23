@@ -1,49 +1,51 @@
-const connection = require( "../config/database")
-const branch = require('../models/schema/branch')
-
+const branchModel = require("../models/branchModel");
 
 const CRUDBranch = {
-  getBranch: () =>{ // [GET]: lấy dữ liệu chi nhánh phòng khám 
-    return branch.find({})
+  // getBranch: () => {
+  //   // [GET]: lấy dữ liệu chi nhánh phòng khám
+  //   return branchModel
+  //     .find({})
+  //     .then(() => {
+  //       console.log("ok");
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // },
+  postBranch: (formData) => {
+    // [POST]: Thêm dữ liệu chi nhánh
+    const Branch = new branchModel(formData);
+    Branch.save()
+      .then(() => {
+        console.log(" Post success !");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
-
-}
-
-async function getAllUser() {
-  const [results, fields] = await connection.execute('SELECT * FROM  Users')
-  return results
-}
-
-const postCreateUserAPI = async (email, name, city) => {
-    const [ results, fields] = await connection.query('INSERT INTO Users (email, name, city) VALUES (?, ?, ?)',
-  [email, name, city]);  
-}
-
-const getUserID = async (id) => {
-  const [results, fields] = await connection.query('SELECT * FROM  Users WHERE id = ?',
-  [id]);
-  let user = results && results.length > 0 ? results[0] : {};
-  return user;
+  putBranch: (id, formData) => {
+    // [PUT]: edit dữ liệu theo id
+    branchModel
+      .updateOne({ _id: id }, formData)
+      .then(() => {
+        console.log(" Update success !");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+  deleteById: (id) => {
+    // [DELETE] : xóa dữ liệu thoe id
+    branchModel
+      .deleteOne({ _id: id })
+      .then(() => {
+        console.log(" Delete success !");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
 };
-
-const postUpdateById = async (infoUser) => {
-  const [results, fields] = await connection.query(` 
-  UPDATE Users 
-  SET email = ?,name=?, city = ?
-  WHERE id = ?;`,
-  [infoUser.email, infoUser.name, infoUser.city,infoUser.id])
-}
-
-const DeleteById = async (UserId) =>{
-  const [results, fields] = await connection.query(`DELETE FROM Users  WHERE id = ?;`,
-  [UserId])
-}
-
 module.exports = {
-getAllUser,
-postCreateUserAPI,
-getUserID,
-postUpdateById,
-DeleteById,
-CRUDBranch
-}
+  CRUDBranch,
+};
