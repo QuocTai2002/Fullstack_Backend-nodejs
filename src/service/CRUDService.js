@@ -6,7 +6,7 @@ const CRUDBranch = {
   getBranch: () =>{ // [GET]: lấy dữ liệu chi nhánh phòng khám 
     return branch.find({})
   },
-
+  
 }
 
 async function getAllUser() {
