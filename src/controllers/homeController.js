@@ -1,6 +1,6 @@
 
 const Swal = require('sweetalert2')
-const branch  =  require('../models/schema/branch')
+const branch  =  require('../models/branchModel')
 const {getAllUser, postCreateUserAPI, getUserID, postUpdateById, DeleteById} = require('../service/CRUDService')
 const getHomepage = async (req, res) =>{
 
@@ -36,8 +36,10 @@ res.redirect('/')
 
 const getUpdateUser = async (req,res) =>{  
   const {userId} = req.params
-  const results = await getUserID (userId)
-  res.render("edit.ejs",{userEdit: results});
+  console.log(userId);
+  res.send(userId)
+  // const results = await getUserID (userId)
+  // res.render("edit.ejs",{userEdit: results});
 }
 
 const postUpdateUser = async (req, res) => {
@@ -55,6 +57,7 @@ const postDeleteUser = async (req, res) =>{
   await DeleteById(userId);
   res.redirect('/');
 }
+
 module.exports = {
     getHomepage,                                                                                                                        
     getWebpage,
@@ -62,5 +65,5 @@ module.exports = {
     getPageCreateUser,
     postUpdateUser,
     getUpdateUser,
-    postDeleteUser
+    postDeleteUser,
 }

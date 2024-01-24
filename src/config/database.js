@@ -14,7 +14,7 @@ const mysql = require('mysql2/promise');
 
 // ##################### CONNECT WITH MONGODB ####################
 
-const connection =  mongoose.createConnection(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/nhidong315_admin`)
+const connection =  mongoose.createConnection(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/nhidong315`)
   // Create the connection pool. The pool-specific settings are the defaults
 // const connection = mysql.createPool({
 //   host: process.env.DB_HOST,
