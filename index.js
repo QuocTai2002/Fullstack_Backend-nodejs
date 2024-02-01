@@ -5,7 +5,7 @@ const webRouter = require('./src/routes/web')
 const initAPIRoute = require('./src/routes/api')
 const configViewEngine = require('./src/config/ViewEngine')
 const port = process.env.PORT || 8080 // port => hard code
-const hostname = process.env.HOST_NAME
+// const hostname = process.env.HOST_NAME
 
 // config req.body
 app.use(express.json());
@@ -20,6 +20,6 @@ configViewEngine(app)
 
 
 // simple query
- app.listen(port, hostname, () => {
+ app.listen(port,  () => {
   console.log(`Example app listening on port ${port}`);
 });
