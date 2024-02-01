@@ -4,7 +4,7 @@ const fetchAllBranch = async (req, res, next) => {
   try {
     const { keyWord } = req.query;
     let objWhere = {};
-    if (keyWord !== '') {
+    if (keyWord !=='') {
       objWhere.nameCN = new RegExp(keyWord, "i");
     } //check có keyWord hay không
     const data = await branchModel.find(objWhere);

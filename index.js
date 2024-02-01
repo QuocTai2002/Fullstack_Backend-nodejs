@@ -13,7 +13,7 @@ app.use(express.json());
  // route API
  initAPIRoute(app)
  // khai bao route
- app.use('/',webRouter);
+//  app.use('/',webRouter);
 
 
 // simple query
