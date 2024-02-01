@@ -6,8 +6,8 @@ const getHomepage = async (req, res) =>{
 
   
   try {
-    const data = await branch.find({});
-    res.status(200).json(data);
+    // const data = await branch.find({});
+    res.status(200).json('ok')
 }  catch (err) {
     res.status(400).json({error: err});
 
