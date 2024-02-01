@@ -5,7 +5,7 @@ const connection =  require('../config/database')
 const AutoIncrement = AutoIncrementFactory(connection);
 const branchModel = new Scheme ({
 
-    _id: Number,
+    _id: {type: Number},
     speciaList:{type:String,default:'Nhi đồng 315'},
     nameCN: {type: String },
     SDT: {type:String,default:'0901.315.315'},

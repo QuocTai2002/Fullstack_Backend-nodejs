@@ -12,9 +12,8 @@ const CRUDBranch = {
   //       console.log(err);
   //     });
   // },
-  postBranch: (formData) => {
-    // [POST]: Thêm dữ liệu chi nhánh
-    const Branch = new branchModel(formData);
+  postBranch: async (formData) => {// [POST]: Thêm dữ liệu chi nhánh
+    const Branch = await new branchModel(formData);
     Branch.save()
       .then(() => {
         console.log(" Post success !");

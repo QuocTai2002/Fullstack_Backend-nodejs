@@ -13,8 +13,9 @@ const mysql = require('mysql2/promise');
 //   });
 
 // ##################### CONNECT WITH MONGODB ####################
-
-const connection =  mongoose.createConnection(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/nhidong315`)
+// const connection =  mongoose.createConnection(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/`)
+const connection =mongoose.createConnection(`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
+// mongodb://admin:315%40nhidong@14.225.20.7:29017/
   // Create the connection pool. The pool-specific settings are the defaults
 // const connection = mysql.createPool({
 //   host: process.env.DB_HOST,

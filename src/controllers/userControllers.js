@@ -23,19 +23,19 @@ const loginUser = async (req, res, next) =>{
   try{
     const user = await userModel.findOne({username: req.body.username})
     if(!user){
-      return res.status(401).json({
-        status:401,
+      return res.status(404).json({
+        status:404,
         message:'sai username',
         date:Date(),
       })
     } if (user.password !== req.body.password){
-      return res.status(401).json({
-        status:401,
+      return res.status(404).json({
+        status:404,
         message:'sai password',
         date:Date()
       })
     } if(user && user.password){
-    const access_Token =  jwt.sign({
+      const access_Token =  jwt.sign({
         id:user._id,
         username:user.username,
         admin:user.admin
@@ -44,7 +44,7 @@ const loginUser = async (req, res, next) =>{
       {expiresIn: '30d'}
       ) 
       const {password,...others} = user._doc;
-      res.status(200).json({
+      return  res.status(200).json({
         status:200,
         message:'Đăng nhập thành công !',
         date:Date(),
@@ -56,6 +56,7 @@ const loginUser = async (req, res, next) =>{
     
   } catch (err){
     res.status(500).json(err)
+    next(err)
   }
 }
 
