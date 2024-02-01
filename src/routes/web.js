@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getHomepage, getWebpage, postCreateUser, getPageCreateUser,getUpdateUser, postUpdateUser, postDeleteUser,demoFucExpress } = require("../controllers/homeController");
+const { getHomepage} = require("../controllers/homeController");
 // khai báo route
 router.get("/", getHomepage);
 
