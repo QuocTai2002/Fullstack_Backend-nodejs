@@ -8,7 +8,7 @@ const port = process.env.PORT || 8080 // port => hard code
 
 // config req.body
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+// app.use(express.urlencoded({extended: true}));
 
  // route API
  initAPIRoute(app)

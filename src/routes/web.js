@@ -4,5 +4,4 @@ const { getHomepage, getWebpage, postCreateUser, getPageCreateUser,getUpdateUser
 // khai báo route
 router.get("/", getHomepage);
 
-
 module.exports = router;
