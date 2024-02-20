@@ -13,7 +13,7 @@ const corsOptions ={
 }
 // config req.body
 app.use(express.json());
-// app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
 // access cross
 app.use(cors(corsOptions));
  // route API

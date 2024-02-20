@@ -17,7 +17,7 @@ const initAPIRoute = (app) =>{
     router.delete('/deleteBranch', deleteBranch) // method [DELETE] -> delete branch
     //############## USER ############
     router.post('/createUser', registerUser)
-    router.get('/loginUser', loginUser)
+    router.post('/loginUser', loginUser)
     router.delete('/deleteUser',authMiddleware.verifyTokenAndAdminAuth, deleteUser)
     router.get('/getAllUser',authMiddleware.verifyToken, getAllUser)
     //############## Specialist #############
